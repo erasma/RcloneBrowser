@@ -310,7 +310,7 @@ MainWindow::MainWindow() {
   //  int button_width = 32;
 
   if (buttonSize == "0") {
-    icon_w = 24;
+    icon_w = 16;
   }
   if (buttonSize == "1") {
     icon_w = 32;
