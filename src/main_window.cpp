@@ -2971,33 +2971,29 @@ void MainWindow::rcloneListRemotes() {
 
             // set icons scale based on iconSize value
             if (iconSize == "S") {
+              lightModeiconScale = 1.5;
+              darkModeIconScale = 1;
+            }
+
+            if (iconSize == "M") {
+              lightModeiconScale = 2;
+              darkModeIconScale = 1.333;
+            }
+
+            if (iconSize == "L") {
               lightModeiconScale = 3;
               darkModeIconScale = 2;
             }
 
-            if (iconSize == "M") {
+            if (iconSize == "XL") {
               lightModeiconScale = 4;
               darkModeIconScale = 2.666;
             }
 
-            if (iconSize == "L") {
-              lightModeiconScale = 6;
-              darkModeIconScale = 4;
-            }
-
-            if (iconSize == "XL") {
-              lightModeiconScale = 8;
-              darkModeIconScale = 5.333;
-            }
-
             if (iconSize == "XXL") {
-              lightModeiconScale = 15;
-              darkModeIconScale = 10;
+              lightModeiconScale = 7.5;
+              darkModeIconScale = 5;
             }
-
-            // disable scaling - all is fusion now
-            // let's leave scaling logic for now
-            darkModeIconScale = lightModeiconScale;
 
 #if !defined(Q_OS_MACOS)
             // _inv only for dark mode
@@ -3687,7 +3683,7 @@ void MainWindow::runItem(JobOptionsListWidgetItem *item,
 
     QDateTime dt = QDateTime::currentDateTime();
     QDateTime widgetStartDateTime = dt;
-    int remove;
+    int remove = 0;
     bool foundOldest = false;
 
     for (int i = widgetsCount - 2; i >= 0; i = i - 2) {
@@ -5146,7 +5142,7 @@ void MainWindow::sortJobs() {
   }
 
   int widgetsCount = ui.jobs->count();
-  int move;
+  int move = 0;
   QDateTime dt;
   QDateTime widgetStartDateTime;
   QString widgetStatus = 0;

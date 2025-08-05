@@ -81,7 +81,7 @@ MountDialog::MountDialog(const QString &remote, const QDir &path,
 
   // used drives' letters
   QStringList disksUsed;
-  int firstDiskFreeIndex;
+  int firstDiskFreeIndex = 0;
 
   // initailize drive letters
   QStringList drivesList;
